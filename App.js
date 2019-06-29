@@ -5,6 +5,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Text>Inicio do App!</Text>
+      <Text>Master</Text>
     </View>
   );
 }
