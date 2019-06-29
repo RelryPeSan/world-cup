@@ -6,67 +6,25 @@ import {
   View
 } from 'react-native';
 
-const countries = [
-  { key: 'Alemanha' },
-  { key: 'Arábia Saudita' },
-  { key: 'Argentina' },
-  { key: 'Austrália' },
-  { key: 'Bélgica' },
-  { key: 'Brasil' },
-  { key: 'Colômbia' },
-  { key: 'Coreia do Sul' },
-  { key: 'Costa Rica' },
-  { key: 'Croácia' },
-  { key: 'Dinamarca' },
-  { key: 'Egito' },
-  { key: 'Espanha' },
-  { key: 'França' },
-  { key: 'Inglaterra' },
-  { key: 'Irã' },
-  { key: 'Islândia' },
-  { key: 'Japão' },
-  { key: 'Marrocos' },
-  { key: 'México' },
-  { key: 'Nigéria' },
-  { key: 'Panamá' },
-  { key: 'Peru' },
-  { key: 'Polônia' },
-  { key: 'Portugal' },
-  { key: 'Rússia' },
-  { key: 'Senegal' },
-  { key: 'Sérvia' },
-  { key: 'Suécia' },
-  { key: 'Suíça' },
-  { key: 'Tunísia' },
-  { key: 'Uruguai' }
-];
+import Header from './src/components/Header';
+import TeamsList from './src/components/TeamsList';
 
 class App extends Component {
   render() {
+    const title = 'Copa do Mundo 2018';
     return (
       <View style={styles.itemsContainer}>
-        <View>
-          <Text style={styles.header}>Copa do Mundo 2018</Text>
-        </View>
-        <FlatList
-          data={countries}
-          numColumns={2}
-          renderItem={ ({item}) => <Text style={styles.item}>{item.key}</Text> }
-        />
+        <Header title={title} />
+        <Text style={styles.titulo}>Mais um titulo</Text>
+        <TeamsList />
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  header: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginBottom: 10,
-    textAlign: 'center',
-  },
   itemsContainer: {
-    backgroundColor: '#f4f5f9',
+    backgroundColor: '#f0f0f0',
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'space-between',
@@ -75,15 +33,18 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     paddingTop: 25,
   },
-  item: {
-    backgroundColor: '#fff',
-    flex: 1,
-    marginBottom: 10,
-    marginRight: 10,
+  titulo: {
+    backgroundColor: '#e0e0e0',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    marginBottom: 5,
+    marginRight: 5,
+    paddingBottom: 10,
     paddingLeft: 10,
     paddingRight: 10,
-    paddingVertical: 10,
+    paddingTop: 10,
     textAlign: 'center',
+    borderRadius: 2,
   },
 });
 
